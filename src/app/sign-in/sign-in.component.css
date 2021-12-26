@@ -1,0 +1,12 @@
+.main-signIn{
+    display: flex;
+    justify-content: center;
+}
+
+.main-container-signIn{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
