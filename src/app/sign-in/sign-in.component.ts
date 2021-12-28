@@ -10,6 +10,8 @@ export class SignInComponent implements OnInit {
 
   constructor() { }
 
+  value1: string = "hola";
+
   ngOnInit(): void {
   }
 
@@ -19,3 +21,5 @@ export class SignInComponent implements OnInit {
   })
 
 }
+
+

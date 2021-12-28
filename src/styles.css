@@ -3,8 +3,13 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
 }
 
 html{
     font-size: 62,5%;
+    background-image: url('https://static.vecteezy.com/ti/vecteur-libre/p1/1234255-bleu-blanc-low-poly-triangle-formes-fond-gratuit-vectoriel.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
