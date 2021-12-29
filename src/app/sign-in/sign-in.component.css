@@ -22,3 +22,13 @@
 .elements-form{
     margin: 5px 0;
 }
+
+#signUpOption-signIn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form-signIn{
+    display: inline-grid;
+}
