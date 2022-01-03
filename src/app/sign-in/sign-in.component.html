@@ -2,7 +2,7 @@
     <div class="main-container-signIn">
         <img src="http://placekitten.com/150/150" alt="" id="img-signIn">
         <h1 id="title-signIn">Ingreso de personal</h1>
-        <form [formGroup]="formUser" id="form-signIn" (ngSubmit)="onSubmit()">
+        <form [formGroup]="formUser" id="form-signIn"  >
             <span class="p-input-icon-left elements-form">
                 <i class="pi pi-search"></i>
                 <input type="text" pInputText  placeholder="Usuario" formControlName="id">         
@@ -11,11 +11,11 @@
                 <i class="pi pi-search"></i>
                 <input type="text" pInputText  placeholder="Contraseña" formControlName="password">         
             </span>
-            <p-button class="elements-form" [disabled]="formUser.invalid" type="submit" label="Ingresar" ></p-button>
+            <p-button class="elements-form" [disabled]="formUser.invalid" (click)="onSubmit()" type="submit" label="Ingresar" ></p-button>
         </form>
         <div id="signUpOption-signIn">
             <p id="text-signUpOption-signIn">¿No tienes una cuenta?</p>
-            <a routerLink="/" id="button-signUpOption-signIn">Registrate ahora</a>
+            <a id="button-signUpOption-signIn">Registrate ahora</a>
         </div>
     </div>
     

@@ -8,12 +8,16 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import {InputTextModule} from 'primeng/inputtext';
 import { HttpClientModule } from '@angular/common/http';
 import {ButtonModule} from 'primeng/button';
+import { InicioComponent } from './inicio/inicio.component';
+import {ScrollPanelModule} from 'primeng/scrollpanel';
+import {DividerModule} from 'primeng/divider';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignInComponent
+    SignInComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +25,9 @@ import {ButtonModule} from 'primeng/button';
     HttpClientModule,
     ReactiveFormsModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    ScrollPanelModule,
+    DividerModule
     
   ],
   providers: [],
