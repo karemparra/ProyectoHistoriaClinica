@@ -22,6 +22,7 @@
 .block-container-inicio{
     width: 100%;
     display: flex;
+    margin: 10px 0;
 }
 
 #block-container-inicio-1{
@@ -48,6 +49,10 @@
     align-items: center;
 }
 
+
 .divider-container-inicio{
     width: 100%;
 }
+
+
+/* p-component */

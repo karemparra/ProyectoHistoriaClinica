@@ -11,13 +11,15 @@ import {ButtonModule} from 'primeng/button';
 import { InicioComponent } from './inicio/inicio.component';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
 import {DividerModule} from 'primeng/divider';
-
+import { SignUpComponent } from './sign-up/sign-up.component';
+import {CalendarModule} from 'primeng/calendar';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
-    InicioComponent
+    InicioComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -27,8 +29,8 @@ import {DividerModule} from 'primeng/divider';
     InputTextModule,
     ButtonModule,
     ScrollPanelModule,
-    DividerModule
-    
+    DividerModule,
+    CalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
