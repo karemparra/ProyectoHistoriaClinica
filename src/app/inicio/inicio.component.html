@@ -1,23 +1,29 @@
 <div class="main-inicio">
     <div class="main-container-inicio">
-        <div class="block-container-inicio" id="block-container-inicio-1">
-            <div id="image-header-container-inicio">
-                <img src="http://placekitten.com/100/100" alt="">
+        <div class="block-main-container-inicio" id="block-main-container-inicio-1">
+            <div id="container-image-header-container-inicio">
+                <img id="image-header-container-inicio" src="../../assets/imgs/doctors3.jpg" alt="">
             </div>
             <div id="text-header-container-inicio">
-                <h1>Inicio</h1>
-                <p>Bienvenido Dr {{user.nombre}} {{user.apellido}}</p> 
+                <div id="user-text-header-container-inicio">
+                    <div class="element-text-header-container-inicio" id="userOptions-text-header-container-inicio">
+                        <h1>Inicio</h1>
+                        <p-button class="elements-form"   type="submit" label="Actualizar datos" ></p-button>
+                        <!-- <p-button class="elements-form" [disabled]="formUser.invalid" (click)="verificarUsuario()" type="submit" label="Ingresar" ></p-button> -->
+                    </div>
+                    <p class="element-text-header-container-inicio" >Bienvenido Dr {{user.nombre}} {{user.apellido}}</p> 
+                </div>
+                <div id="patient-text-header-container-inicio">
+                    <p class="element-text-header-container-inicio"> Busca la historia clinica de tu paciente </p>
+                    <div class="p-inputgroup element-text-header-container-inicio">
+                        <button type="button" pButton pRipple label="Buscar"></button>
+                        <input type="text" pInputText placeholder="Número de documento">         
+                    </div>
+                </div>
             </div>
         </div>
         <p-divider class="divider-container-inicio"></p-divider>
-        <div class="block-container-inicio" id="block-container-inicio-2">
-            <div class="p-inputgroup">
-                <button type="button" pButton pRipple label="Search"></button>
-                <input type="text" pInputText placeholder="Keyword">         
-            </div>
-        </div>
-        <p-divider class="divider-container-inicio"></p-divider>
-        <div class="block-container-inicio" id="block-container-inicio-3">
+        <div class="block-main-container-inicio" id="block-main-container-inicio-2">
             <p-scrollPanel id="scrollPanel-block-container-inicio" [style]="{width: '100%', height: '82%'}">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ducimus architecto quasi tempora recusandae impedit sapiente, numquam earum id est repellendus, non necessitatibus explicabo laboriosam obcaecati error suscipit aliquid fugiat?
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit incidunt praesentium, amet, cum aperiam quis modi rem velit doloribus deleniti, quidem corporis necessitatibus numquam doloremque. Amet molestias ipsam quibusdam dignissimos.

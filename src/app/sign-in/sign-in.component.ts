@@ -15,6 +15,7 @@ export class SignInComponent implements OnInit {
   EPverificarUsuario: string = environment.url + '/usuario/verificarUsuario';
   user: string | undefined;
   routeLink: string | undefined;
+  iconImage: string = "../../images/doctors2-min.jpg";
 
   constructor(private http:HttpClient, private router: Router) { }
 
@@ -37,7 +38,6 @@ export class SignInComponent implements OnInit {
         localStorage.setItem("user", JSON.stringify(this.user))
       }
     });
-    console.log("hola");
   }
 
 }

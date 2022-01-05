@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 import { SignInComponent } from './sign-in/sign-in.component';
 import {InputTextModule} from 'primeng/inputtext';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,6 +14,10 @@ import {ScrollPanelModule} from 'primeng/scrollpanel';
 import {DividerModule} from 'primeng/divider';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {CalendarModule} from 'primeng/calendar';
+import {PasswordModule} from 'primeng/password';
+import {DialogModule} from 'primeng/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +35,11 @@ import {CalendarModule} from 'primeng/calendar';
     ButtonModule,
     ScrollPanelModule,
     DividerModule,
-    CalendarModule
+    CalendarModule,
+    FormsModule,
+    PasswordModule,
+    DialogModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

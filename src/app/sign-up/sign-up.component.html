@@ -1,44 +1,93 @@
-<div class="main-inicio">
-    <div class="main-container-inicio">
-        <img src="http://placekitten.com/130/130" >
-        <h1>Registro</h1>
-        <form action="">
-            <span class="p-input-icon-left elements-form">
-                <i class="pi pi-search"></i>
-                <input type="text" pInputText  placeholder="Número de cédula" formControlName="cedula">         
-            </span>
-            <span class="p-input-icon-left elements-form">
-                <i class="pi pi-search"></i>
-                <input type="text" pInputText  placeholder="Nombre" formControlName="nombre">         
-            </span>
-            <span class="p-input-icon-left elements-form">
-                <i class="pi pi-search"></i>
-                <input type="text" pInputText  placeholder="Apellido" formControlName="apellido">         
-            </span>
-            <span class="p-input-icon-left elements-form">
-                <i class="pi pi-search"></i>
-                <input type="text" pInputText  placeholder="E-mail" formControlName="email">         
-            </span>
-            <span class="p-input-icon-left elements-form">
-                <i class="pi pi-search"></i>
-                <input type="text" pInputText  placeholder="Teléfono" formControlName="telefono">         
-            </span>
-            <span class="p-input-icon-left elements-form">
-                <i class="pi pi-search"></i>
-                <input type="text" pInputText  placeholder="Dirección" formControlName="direccion">         
-            </span>
-            <div class="p-field p-col-12 p-md-4">
-                <label for="dateformat">DateFormat</label>
-                <p-calendar dateFormat="mm-dd-yy" inputId="dateformat"></p-calendar>
+<div class="main-signUp">
+    <div class="main-container-signUp">
+        <div class="description-signUp">
+            <img id="img-description-signUp" src="../../assets/imgs/doctors2-min.jpg" >
+            <div id="text-description-signUp">
+                <h1>Registro</h1>
+                <p>Añade tus datos para registrarte dentro de la app</p>
             </div>
-            <span class="p-input-icon-left elements-form">
-                <i class="pi pi-search"></i>
-                <input type="text" pInputText  placeholder="Nombre" formControlName="nombre">         
-            </span>
-            <span class="p-input-icon-left elements-form">
-                <i class="pi pi-search"></i>
-                <input type="text" pInputText  placeholder="Nombre" formControlName="nombre">         
-            </span>
+        </div>
+        <form  [formGroup]="formNewUser" class="form-signUp grid">
+            <div class="col-6">
+                <span class="p-float-label elements-form-signUp">
+                    <input type="text" id="inputtext" pInputText formControlName="cedula"> 
+                    <label for="inputtext">Documento de identidad</label>
+                </span>
+            </div>
+            <div class="col-6">
+                <span class="p-float-label elements-form-signUp">
+                    <input type="text" id="inputtext" pInputText formControlName="nombre"> 
+                    <label for="inputtext">Nombre</label>
+                </span>
+            </div>
+            <div class="col-6">
+                <span class="p-float-label elements-form-signUp">
+                    <input type="text" id="inputtext" pInputText formControlName="apellido"> 
+                    <label for="inputtext">Apellido</label>
+                </span>
+            </div>
+            <div class="col-6">
+                <span class="p-float-label elements-form-signUp">
+                    <input type="text" id="inputtext" pInputText formControlName="email"> 
+                    <label for="inputtext">E-mail</label>
+                </span>
+            </div>
+            <div class="col-6" >
+                <span class="p-float-label elements-form-signUp">
+                    <input type="text" id="inputtext" pInputText formControlName="telefono"> 
+                    <label for="inputtext">Teléfono</label>
+                </span>
+            </div>
+            <div class="col-6" >
+                <span class="p-float-label elements-form-signUp">
+                    <input type="text" id="inputtext" pInputText formControlName="direccion"> 
+                    <label for="inputtext">Dirección de residencia</label>
+                </span>
+            </div>
+            <div class="col-6" >
+                <span class="p-float-label elements-form-signUp">
+                    <input type="text" id="inputtext" pInputText formControlName="fechaNacimiento"> 
+                    <label for="inputtext">Fecha de nacimiento(aaaa-mm-dd)</label>
+                </span>
+            </div>
+            <div class="col-6">
+                <span class="p-float-label elements-form-signUp">
+                    <input type="text" id="inputtext" pInputText formControlName="especialidad"> 
+                    <label for="inputtext">Especialidad</label>
+                </span>
+            </div>
+            <div class="col-6">
+                <span class="p-float-label elements-form-signUp">
+                    <input type="text" id="inputtext" pInputText formControlName="contraseña"> 
+                    <label for="inputtext">Contraseña</label>
+                </span>
+            </div>
+            <div class="col-6" >
+                <span class="p-float-label elements-form-signUp">
+                    <input type="text" id="inputtext" pInputText formControlName="validContraseña"> 
+                    <label for="inputtext">Confirmar contraseña</label>
+                </span>
+            </div>
+            <!-- <div class="col-6">
+                <span class="p-float-label elements-form-signUp">
+                    <p-password inputId="password" ></p-password>
+                    <label for="password">Confirmar contraseña</label>
+                </span>
+            </div> -->
+            <!-- <div class="col-6" >
+                <span class="p-float-label elements-form-signUp">
+                    <p-calendar class="p-element p-inputwrapper ng-tns-c48-4 ng-pristine ng-valid ng-star-inserted ng-touched" inputId="calendar" [(ngModel)]="value3"></p-calendar>
+                    <label for="calendar">Calendar</label>
+                </span> 
+            </div> -->
+            <div class="col-6" id="button-container-form-signUp">
+                <p-dialog [header]="headerDialog" [(visible)]="display">
+                    {{contentDialog}}
+                </p-dialog>
+                <p-button class="elements-form" [disabled]="formNewUser.invalid" (click)="registrarUsuario()" type="submit" label="Registrarse" ></p-button>
+            </div>
+            
+
         </form>
     </div>
 </div>

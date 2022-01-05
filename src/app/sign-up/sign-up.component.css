@@ -1,4 +1,4 @@
-.main-inicio{
+.main-signUp{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,9 +6,9 @@
     height: 100vh;
 }
 
-.main-container-inicio{
+.main-container-signUp{
     width: 85%;
-    height: 85%;
+    height: 95%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,4 +17,45 @@
     border-radius: 15px;
     box-shadow: -4px 4px 10px 2px rgba(121, 121, 121, 0.164);
     padding: 2rem 5rem;
+}
+
+.description-signUp{
+    display: flex;
+    width: 100%;
+    height: 33%;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.elements-form-signUp{
+    margin: 0.35rem 0px;
+}
+
+.p-inputtext{
+    width: 100%;
+}
+
+.form-signUp {
+    padding: 0 3rem;
+    height: 67%;
+}
+
+.button-container-form-signUp{
+ display: flex;
+ align-items: center;
+}
+
+#img-description-signUp{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    margin-left: 3rem;
+}
+
+#text-description-signUp{
+    margin-left: 2rem;
+}
+
+div .p-password{
+    width: 100%;
 }

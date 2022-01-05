@@ -13,3 +13,11 @@ html{
     background-position: center;
     background-attachment: fixed;
 }
+
+h1, p, a, label{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    color: #0049d1;
+}

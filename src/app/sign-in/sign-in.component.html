@@ -1,7 +1,8 @@
 <div class="main-signIn">
     <div class="main-container-signIn">
-        <img src="http://placekitten.com/150/150" alt="" id="img-signIn">
-        <h1 id="title-signIn">Ingreso de personal</h1>
+        <img src="../../assets/imgs/doctors2-min.jpg" alt="" id="img-signIn">
+        <h1 id="title-signIn">Iniciar sesión</h1>
+        <p>Inicia sesión para revisar la historia clínica de tus pacientes</p>
         <form [formGroup]="formUser" id="form-signIn"  >
             <span class="p-input-icon-left elements-form">
                 <i class="pi pi-search"></i>
@@ -15,7 +16,7 @@
         </form>
         <div id="signUpOption-signIn">
             <p id="text-signUpOption-signIn">¿No tienes una cuenta?</p>
-            <a id="button-signUpOption-signIn">Registrate ahora</a>
+            <a routerLink="/signUp" id="button-signUpOption-signIn">Registrate ahora</a>
         </div>
     </div>
     
