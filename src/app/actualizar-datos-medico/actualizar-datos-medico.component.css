@@ -1,4 +1,4 @@
-.main-signUp{
+.main-actMed{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,7 +6,7 @@
     height: 100vh;
 }
 
-.main-container-signUp{
+.main-container-actMed{
     width: 85%;
     height: 95%;
     display: flex;
@@ -19,7 +19,7 @@
     padding: 2rem 5rem;
 }
 
-.description-signUp{
+.description-actMed{
     display: flex;
     width: 100%;
     height: 33%;
@@ -27,7 +27,7 @@
     align-items: center;
 }
 
-.elements-form-signUp{
+.elements-form-actMed{
     margin: 0.35rem 0px;
 }
 
@@ -35,41 +35,27 @@
     width: 100%;
 }
 
-.form-signUp {
+.form-actMed {
     padding: 0 3rem;
     height: 67%;
 }
 
-.button-container-form-signUp{
+.button-container-form-actMed{
  display: flex;
  align-items: center;
 }
 
-#img-description-signUp{
+#img-description-actMed{
     width: 8rem;
     height: 8rem;
     border-radius: 50%;
     margin-left: 3rem;
 }
 
-#text-description-signUp{
+#text-description-actMed{
     margin-left: 2rem;
 }
 
 div .p-password{
     width: 100%;
 }
-
-#overlay{
-    position: fixed; 
-    display: none; 
-    width: 100%; 
-    height: 100%; 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5); 
-    z-index: 2; 
-    cursor: pointer; 
-  }

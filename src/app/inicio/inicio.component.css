@@ -23,7 +23,8 @@
     width: 100%;
     display: flex;
     margin: 10px 0;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    height: 55%;
 }
 
 
@@ -31,18 +32,15 @@
     height: 40%;
 }
 
-#block-main-container-inicio-2{
-    height: 55%;
-}
+
 
 #container-image-header-container-inicio{
-    width: 40%;
+    width: 30%;
 
 }
 
 #image-header-container-inicio{
     width: 100%;
-    height: 100%;
 }
 
 #text-header-container-inicio{
@@ -69,6 +67,10 @@
     width: 100%;
 }
 
+.pacientContent-block-container-inicio{
+    width: 45%;
+}
 
-
-/* p-component */
+.pacientContent-block-container-inicio > p, .pacientContent-block-container-inicio > button {
+    margin-top: 0.8rem;
+}

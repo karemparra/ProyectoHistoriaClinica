@@ -11,8 +11,6 @@ import { environment } from 'src/environments/environment';
 })
 export class SignUpComponent implements OnInit {
 
-  value3: any;
-  valueIconLeft: string| undefined;
   EPregistrarUsuario: string = environment.url + '/usuario/crearUsuario';
   user: string | undefined;
   bodyRequest: any;
@@ -21,16 +19,16 @@ export class SignUpComponent implements OnInit {
   contentDialog!: string;
 
   formNewUser = new FormGroup({
-    cedula: new FormControl('1088035775', [Validators.required, Validators.maxLength(10)]),
-    nombre: new FormControl('Héctor', Validators.required),
-    apellido: new FormControl('Cardona', Validators.required),
-    email: new FormControl('hector@gmail.com', [Validators.required, Validators.email]),
-    telefono: new FormControl('3104690994', [Validators.required, Validators.maxLength(10)]),
-    direccion: new FormControl('CentralPark', Validators.required),
-    fechaNacimiento: new FormControl('1998-11-08', Validators.required),
-    especialidad: new FormControl('Cirugía', Validators.required),
-    contraseña: new FormControl('hectorcardona', Validators.required),
-    validContraseña: new FormControl('hectorcardona', Validators.required)
+    cedula: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+    nombre: new FormControl('', Validators.required),
+    apellido: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    telefono: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+    direccion: new FormControl('', Validators.required),
+    fechaNacimiento: new FormControl('', Validators.required),
+    especialidad: new FormControl('', Validators.required),
+    contraseña: new FormControl('', Validators.required),
+    validContraseña: new FormControl('', Validators.required)
   })
 
   constructor(private http: HttpClient) { }
@@ -40,7 +38,6 @@ export class SignUpComponent implements OnInit {
 
   registrarUsuario(){
     if(this.formNewUser.value.contraseña == this.formNewUser.value.validContraseña){
-      
       this.bodyRequest = {cedula: this.formNewUser.value.cedula,
                           nombre: this.formNewUser.value.nombre, 
                           apellido: this.formNewUser.value.apellido,
@@ -49,31 +46,22 @@ export class SignUpComponent implements OnInit {
                           direccion: this.formNewUser.value.direccion,
                           fechaNacimiento: this.formNewUser.value.fechaNacimiento,
                           especialidad: this.formNewUser.value.especialidad,
-                          contraseña: this.formNewUser.value.contraseña}
-      console.log(this.bodyRequest)
-      console.log(this.formNewUser.value)//borrar
+                          contraseña: this.formNewUser.value.contraseña
+                        }
       this.http.post<any>(this.EPregistrarUsuario,this.bodyRequest).subscribe(data => {
-        console.log(data); //borrar
         this.user = data;
-        console.log(typeof(this.user)); //borrar
         this.headerDialog = "Registro completado";
         this.contentDialog = "Te vamos a redirigir a la página inicial";
-        this.showDialog();
-        // if(this.user){
-        //   this.router.navigate(['/inicio']);
-        //   localStorage.setItem("user", JSON.stringify(this.user))
-        // }
+        this.display = true;
       });
     } else {
-      this.headerDialog = "Oh no...";
+      this.headerDialog = "Oh no... 😭";
       this.contentDialog = "La contraseña que ingresaste y su verificación no concuerdan, revísalas y vuelve a intentarlo";
-      this.showDialog();
+      this.display = true;
     }
   }
   
-  showDialog() {
-    this.display = true;
-  }
+  
   
 
 }

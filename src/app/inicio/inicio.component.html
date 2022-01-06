@@ -8,30 +8,62 @@
                 <div id="user-text-header-container-inicio">
                     <div class="element-text-header-container-inicio" id="userOptions-text-header-container-inicio">
                         <h1>Inicio</h1>
-                        <p-button class="elements-form"   type="submit" label="Actualizar datos" ></p-button>
-                        <!-- <p-button class="elements-form" [disabled]="formUser.invalid" (click)="verificarUsuario()" type="submit" label="Ingresar" ></p-button> -->
+                        <p-button class="elements-form"  routerLink="/actualizarDatosMedico" type="submit" label="Actualizar datos" ></p-button>
                     </div>
                     <p class="element-text-header-container-inicio" >Bienvenido Dr {{user.nombre}} {{user.apellido}}</p> 
                 </div>
                 <div id="patient-text-header-container-inicio">
                     <p class="element-text-header-container-inicio"> Busca la historia clinica de tu paciente </p>
                     <div class="p-inputgroup element-text-header-container-inicio">
-                        <button type="button" pButton pRipple label="Buscar"></button>
-                        <input type="text" pInputText placeholder="Número de documento">         
+                        <button type="button" (click)="buscarPaciente()" pButton pRipple label="Buscar"></button>
+                        <input type="text" pInputText placeholder="Número de documento" [formControl]="cedulaPaciente">         
                     </div>
                 </div>
             </div>
         </div>
         <p-divider class="divider-container-inicio"></p-divider>
-        <div class="block-main-container-inicio" id="block-main-container-inicio-2">
-            <p-scrollPanel id="scrollPanel-block-container-inicio" [style]="{width: '100%', height: '82%'}">
+        <div *ngIf="!primeraVez; else elseBlock" class="block-main-container-inicio" id="block-main-container-inicio-2">
+            <div [hidden]="!pacienteEncontrado" class="pacientContent-block-container-inicio">
+                <p>No existe un paciente con el número de documento ingresado.</p>
+                <p>Vuelve a intentarlo o crea un nuevo paciente</p>
+                <button pButton type="button" label="Nuevo paciente" ></button>
+            </div>
+            <div [hidden]="pacienteEncontrado" class="pacientContent-block-container-inicio">
+                <div id="info-pacientContent-block-container-inicio">
+                    <p ><b>Nombre: </b>{{pacienteAct.nombre}}</p>
+                    <p><b>Apellido: </b>{{pacienteAct.apellido}}</p>
+                    <p><b>Edad: </b>{{pacienteEdad}}</p>
+                    <p><b>Correo electrónico: </b>{{pacienteAct.email}}</p>
+                    <p><b>Teléfono: </b>{{pacienteAct.telefono}}</p>
+                    <p><b>Dirección: </b>{{pacienteAct.direccion}}</p>
+                    <p><b>Enfermedades de base: </b>{{pacienteAct.enfermedades}}</p>
+                    <p><b>Tipo de sangre: </b>{{pacienteAct.tipoSangre}}</p>
+                    <p><b>EPS: </b>{{pacienteAct.eps}}</p>
+                </div>
+                <div id="options-pacientContent-block-container-inicio">
+                    <button pButton type="button" label="Actualizar datos" ></button>
+                    <button pButton type="button" label="Nueva consulta" ></button>
+                    <div  id="deleteButton-container-form-inicio">
+                        <p-dialog [header]="headerDialog" [(visible)]="display">
+                            {{contentDialog}}
+                        </p-dialog>
+                        <p-button class="elements-form" (click)="eliminarPaciente()" type="button" label="Eliminar paciente" ></p-button>
+                        <!-- <button pButton type="button" label="Eliminar paciente" (click)=eliminarPaciente() ></button> -->
+                    </div>
+                </div>
+            </div>
+            <p-divider layout="vertical"></p-divider>
+            <div [hidden]="!pacienteEncontrado" class="pacientContent-block-container-inicio">
+                <p>No existen historias clinicas relacionadas con este paciente.</p>
+            </div>
+            <p-scrollPanel [hidden]="pacienteEncontrado" class="pacientContent-block-container-inicio" [style]="{width: '100%', height: '82%'}">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ducimus architecto quasi tempora recusandae impedit sapiente, numquam earum id est repellendus, non necessitatibus explicabo laboriosam obcaecati error suscipit aliquid fugiat?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit incidunt praesentium, amet, cum aperiam quis modi rem velit doloribus deleniti, quidem corporis necessitatibus numquam doloremque. Amet molestias ipsam quibusdam dignissimos.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente praesentium recusandae facilis explicabo quo esse exercitationem deleniti? Beatae similique, ratione corrupti quasi temporibus quas molestias aspernatur cupiditate, earum nemo adipisci!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, eius quisquam odit eos eveniet, consequatur veniam sapiente officia, laboriosam amet provident. Quas impedit nihil omnis ducimus corrupti sint itaque deleniti?
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo incidunt quas expedita odio voluptatem tenetur illum pariatur asperiores, neque consequatur cumque vitae, suscipit, impedit eligendi. Ad nobis minus iure modi?
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident ipsum facilis aliquam. Dolores sapiente at beatae velit, culpa facere delectus vitae, cupiditate, assumenda quas autem iure voluptate accusamus? Quis, fuga!
             </p-scrollPanel>
         </div>
+        <ng-template #elseBlock >
+            <div class="block-main-container-inicio">
+                <p>Busca un paciente con el número de documento para ver sus datos</p>
+            </div>
+        </ng-template>
     </div>
 </div>

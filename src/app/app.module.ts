@@ -17,6 +17,7 @@ import {CalendarModule} from 'primeng/calendar';
 import {PasswordModule} from 'primeng/password';
 import {DialogModule} from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ActualizarDatosMedicoComponent } from './actualizar-datos-medico/actualizar-datos-medico.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     SignInComponent,
     InicioComponent,
-    SignUpComponent
+    SignUpComponent,
+    ActualizarDatosMedicoComponent
   ],
   imports: [
     BrowserModule,

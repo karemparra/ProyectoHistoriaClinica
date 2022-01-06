@@ -11,10 +11,8 @@ import { environment } from 'src/environments/environment';
 })
 export class SignInComponent implements OnInit {
   
-  value1: string = "hola";
   EPverificarUsuario: string = environment.url + '/usuario/verificarUsuario';
   user: string | undefined;
-  routeLink: string | undefined;
   iconImage: string = "../../images/doctors2-min.jpg";
 
   constructor(private http:HttpClient, private router: Router) { }
@@ -23,16 +21,13 @@ export class SignInComponent implements OnInit {
   }
 
   formUser = new FormGroup({
-    id: new FormControl('1088035490', Validators.required),
-    password: new FormControl('karemparra', Validators.required)
+    id: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required)
   })
 
   verificarUsuario(){
-    console.log(this.formUser.value)//borrar
     this.http.get<any>(this.EPverificarUsuario, {params: {cedula: this.formUser.value.id, contraseña: this.formUser.value.password}}).subscribe(data => {
-      console.log(data); //borrar
       this.user = data;
-      console.log(typeof(this.user)); //borrar
       if(this.user){
         this.router.navigate(['/inicio']);
         localStorage.setItem("user", JSON.stringify(this.user))

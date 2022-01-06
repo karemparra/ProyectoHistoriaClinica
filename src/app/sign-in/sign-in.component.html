@@ -5,12 +5,12 @@
         <p>Inicia sesión para revisar la historia clínica de tus pacientes</p>
         <form [formGroup]="formUser" id="form-signIn"  >
             <span class="p-input-icon-left elements-form">
-                <i class="pi pi-search"></i>
+                <i class="pi pi-user"></i>
                 <input type="text" pInputText  placeholder="Usuario" formControlName="id">         
             </span>
             <span class="p-input-icon-left elements-form">
-                <i class="pi pi-search"></i>
-                <input type="text" pInputText  placeholder="Contraseña" formControlName="password">         
+                <i class="pi pi-unlock"></i>
+                <input type="password" pInputText  placeholder="Contraseña" formControlName="password">         
             </span>
             <p-button class="elements-form" [disabled]="formUser.invalid" (click)="verificarUsuario()" type="submit" label="Ingresar" ></p-button>
         </form>

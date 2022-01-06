@@ -1,91 +1,90 @@
-<div id="overlay"></div>
-<div class="main-signUp">
-    <div class="main-container-signUp">
-        <div class="description-signUp">
-            <img id="img-description-signUp" src="../../assets/imgs/doctors2-min.jpg" >
-            <div id="text-description-signUp">
-                <h1>Registro</h1>
-                <p>Añade tus datos para registrarte dentro de la app</p>
+<div class="main-actMed">
+    <div class="main-container-actMed">
+        <div class="description-actMed">
+            <img id="img-description-actMed" src="../../assets/imgs/doctors2-min.jpg" >
+            <div id="text-description-actMed">
+                <h1>Actualización de datos de médico</h1>
+                <p>Actualiza tus datos para continuar en la app</p>
             </div>
         </div>
-        <form  [formGroup]="formNewUser" class="form-signUp grid">
+        <form  [formGroup]="formUpdateUser" class="form-actMed grid">
             <div class="col-6">
-                <span class="p-float-label elements-form-signUp">
-                    <input type="text" id="inputtext" pInputText formControlName="cedula"> 
+                <span  class="p-float-label elements-form-actMed">
+                    <input [attr.disabled]="disabled" type="text" id="inputtext" pInputText formControlName="cedula"> 
                     <label for="inputtext">Documento de identidad</label>
                 </span>
             </div>
             <div class="col-6">
-                <span class="p-float-label elements-form-signUp">
+                <span class="p-float-label elements-form-actMed">
                     <input type="text" id="inputtext" pInputText formControlName="nombre"> 
                     <label for="inputtext">Nombre</label>
                 </span>
             </div>
             <div class="col-6">
-                <span class="p-float-label elements-form-signUp">
+                <span class="p-float-label elements-form-actMed">
                     <input type="text" id="inputtext" pInputText formControlName="apellido"> 
                     <label for="inputtext">Apellido</label>
                 </span>
             </div>
             <div class="col-6">
-                <span class="p-float-label elements-form-signUp">
+                <span class="p-float-label elements-form-actMed">
                     <input type="text" id="inputtext" pInputText formControlName="email"> 
                     <label for="inputtext">E-mail</label>
                 </span>
             </div>
             <div class="col-6" >
-                <span class="p-float-label elements-form-signUp">
+                <span class="p-float-label elements-form-actMed">
                     <input type="text" id="inputtext" pInputText formControlName="telefono"> 
                     <label for="inputtext">Teléfono</label>
                 </span>
             </div>
             <div class="col-6" >
-                <span class="p-float-label elements-form-signUp">
+                <span class="p-float-label elements-form-actMed">
                     <input type="text" id="inputtext" pInputText formControlName="direccion"> 
                     <label for="inputtext">Dirección de residencia</label>
                 </span>
             </div>
             <div class="col-6" >
-                <span class="p-float-label elements-form-signUp">
+                <span class="p-float-label elements-form-actMed">
                     <input type="text" id="inputtext" pInputText formControlName="fechaNacimiento"> 
                     <label for="inputtext">Fecha de nacimiento(aaaa-mm-dd)</label>
                 </span>
             </div>
             <div class="col-6">
-                <span class="p-float-label elements-form-signUp">
+                <span class="p-float-label elements-form-actMed">
                     <input type="text" id="inputtext" pInputText formControlName="especialidad"> 
                     <label for="inputtext">Especialidad</label>
                 </span>
             </div>
             <div class="col-6">
-                <span class="p-float-label elements-form-signUp">
+                <span class="p-float-label elements-form-actMed">
                     <input type="password" id="inputtext" pInputText formControlName="contraseña"> 
                     <label for="inputtext">Contraseña</label>
                 </span>
             </div>
             <div class="col-6" >
-                <span class="p-float-label elements-form-signUp">
+                <span class="p-float-label elements-form-actMed">
                     <input type="password" id="inputtext" pInputText formControlName="validContraseña"> 
                     <label for="inputtext">Confirmar contraseña</label>
                 </span>
             </div>
             <!-- <div class="col-6">
-                <span class="p-float-label elements-form-signUp">
+                <span class="p-float-label elements-form-actMed">
                     <p-password inputId="password" ></p-password>
                     <label for="password">Confirmar contraseña</label>
                 </span>
             </div> -->
             <!-- <div class="col-6" >
-                <span class="p-float-label elements-form-signUp">
+                <span class="p-float-label elements-form-actMed">
                     <p-calendar class="p-element p-inputwrapper ng-tns-c48-4 ng-pristine ng-valid ng-star-inserted ng-touched" inputId="calendar" [(ngModel)]="value3"></p-calendar>
                     <label for="calendar">Calendar</label>
                 </span> 
             </div> -->
-            <div class="col-6" id="button-container-form-signUp">
+            <div class="col-6" id="button-container-form-actMed">
                 <p-dialog [header]="headerDialog" [(visible)]="display">
                     {{contentDialog}}
                 </p-dialog>
-                <p-button class="elements-form" [disabled]="formNewUser.invalid" (click)="registrarUsuario()" type="submit" label="Registrarse" ></p-button>
+                <p-button class="elements-form" [disabled]="formUpdateUser.invalid" (click)="actualizarUsuario()" type="submit" label="Actualizar datos" ></p-button>
             </div>
             
 
